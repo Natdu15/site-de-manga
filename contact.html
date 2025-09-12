@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/style-contact.css">
+  <script src="js/contact.js" defer></script>
+</head>
+<body>
+  <header role="banner" aria-label="En-tête du site">
+    <h1>Contactez-nous</h1>
+    <p>Donnez votre avis sur la qualité de notre site</p>
+  </header>
+
+  <nav role="navigation" aria-label="Menu principal">
+    <a href="testcss.html">Accueil</a>
+    <a href="explication.html">Explication des jeux</a>
+    <a href="Jouer maintenant.html">Jouez maintenant</a>
+    <a href="contact.html" aria-current="page">Nous contacter</a>
+  </nav>
+
+  <section class="contact-container" role="main" aria-label="Formulaire de feedback">
+    <form action="https://formsubmit.co/chapnat31@gmail.com" method="POST" novalidate id="contact-form">
+      <input type="hidden" name="_next" value="https://ptut-anime.glitch.me/remerciement.html">
+      <input type="hidden" name="_debug" value="true">
+      <input type="hidden" name="_subject" value="Feedback PTUT Anime Site">
+      <input type="hidden" name="_autoresponse" value="Merci pour votre feedback !">
+      <div class="form-group">
+        <label for="email">Adresse e-mail :</label>
+        <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required aria-required="true" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Votre message :</label>
+        <textarea id="message" name="message" placeholder="Partagez vos impressions..." required aria-required="true"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Notez la qualité du site (1-5 étoiles) :</label>
+        <div class="star-rating" role="radiogroup" aria-label="Note de 1 à 5 étoiles">
+          <input type="radio" id="star5" name="rating" value="5" required><label for="star5" title="5 étoile">★</label>
+          <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 étoiles">★</label>
+          <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 étoiles">★</label>
+          <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 étoiles">★</label>
+          <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 étoiles">★</label>
+        </div>
+      </div>
+
+      <div class="form-group extra-feedback" style="display: none;">
+        <div class="feedback-row">
+          <div class="feedback-item">
+            <label for="strong-point">Points forts du site :</label>
+            <textarea id="strong-point" name="strong_point" placeholder="Ex. : Design, contenu, etc."></textarea>
+          </div>
+          <div class="feedback-item">
+            <label for="weak-point">Points faibles du site :</label>
+            <textarea id="weak-point" name="weak_point" placeholder="Ex. : Navigation, contenu, etc."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Envoyer votre feedback</button>
+      <div class="confirmation" role="alert" aria-live="polite"></div>
+    </form>
+  </section>
+</body>
+</html>

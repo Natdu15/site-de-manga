@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 2rem 0;
+  background: linear-gradient(to right, #6e00ff, #ff0055);
+  color: white;
+  box-shadow: 0 0 10px #ff00cc;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 10px #000;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: white;
+  margin: 0 2rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #000;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 300px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #333;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+.card img {
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h2 {
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 1rem 0;
+}
+
+.card a {
+  display: inline-block;
+  color: limegreen;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  background-color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px limegreen;
+  transition: all 0.3s ease-in-out;
+}
+
+.card a:hover {
+  background-color: limegreen;
+  color: #000;
+  box-shadow: 0 0 20px limegreen;
+}
+
+/* Specific styles */
+.card.manga { border-color: #ff0066; }
+.card.anime { border-color: #9900ff; }
+.card.perso { border-color: #00ccff; }
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: #111;
+  padding: 1rem 0;
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #00ffee;
+  transition: width 0.3s ease;
+}
+
+.navbar li a:hover {
+  color: #00ffee;
+}
+
+.navbar li a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 0;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 2rem);
+  }
+
+  nav a {
+    margin: 0 1rem;
+    font-size: clamp(1rem, 3vw, 1.1rem);
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .navbar li a {
+    font-size: clamp(1rem, 3vw, 1.1rem);
+  }
+
+  .cards {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 350px;
+    padding: 0.75rem;
+  }
+
+  .card img {
+    max-height: 150px;
+  }
+
+  .card h2 {
+    font-size: clamp(1.4rem, 4vw, 1.6rem);
+  }
+
+  .card p {
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  .card a {
+    padding: 0.4rem 0.8rem;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.75rem 0;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4.5vw, 1.8rem);
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: clamp(0.9rem, 2.8vw, 1rem);
+  }
+
+  .navbar ul {
+    gap: 1rem;
+  }
+
+  .cards {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .card img {
+    max-height: 120px;
+  }
+
+  .card h2 {
+    font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+  }
+
+  .card a {
+    padding: 0.3rem 0.6rem;
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  }
+}

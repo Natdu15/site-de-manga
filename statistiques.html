@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résultats des Votes</title> <!-- Titre de l'onglet -->
+  <link rel="stylesheet" href="css/statistiques.css" />
+  <link rel="stylesheet" href="css/retour.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Lien vers chartjs -->
+</head>
+<body>
+  <header>
+    <h1>Résultats Statistiques en Temps Réel</h1>
+    <p>Analyse détaillée des votes par catégorie</p>
+    <a href="Jouer maintenant.html">
+      <button class="btn-retour">← Retour à l'accueil</button>
+    </a>
+  </header>
+
+  <main>
+    <section id="statistiques-container"> <!-- Mise en place de tout les graphiques -->
+      <div>
+        <h2>Âge moyen des participants</h2>
+        <p id="ageMoyen" style="font-size: 2rem; font-weight: 700; color: #00ffcc; text-align: center; margin-top: 1rem;">
+          -- ans
+        </p>
+      </div>
+
+      <div>
+        <h2>Répartition par sexe</h2>
+        <canvas id="sexChart"></canvas>
+      </div>
+
+      <!-- Podiums -->
+      <div>
+        <h2>Top 3 Anime</h2>
+        <div id="podiumAnime" class="podium"></div>
+      </div>
+
+      <div>
+        <h2>Top 3 Manga</h2>
+        <div id="podiumManga" class="podium"></div>
+      </div>
+
+      <div>
+        <h2>Top 3 Personnage</h2>
+        <div id="podiumPersonnage" class="podium"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Manga Tournament • Statistiques dynamiques</p>
+  </footer>
+
+  <script src="js/statistiques.js"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tournoi Manga</title>
+  <link rel="stylesheet" href="css/retour.css"> <!-- Lien vers un fichier extérieur -->
+  <link rel="stylesheet" href="css/personnages.css">
+</head>
+<body>
+
+  <header>
+    <h1>Tournoi All Time Manga</h1>
+    <div class="container-retour">
+      <a href="Jouer maintenant.html">
+  <button class="btn-retour">← Retour à l'accueil</button>
+      </a>
+    </div>
+    <div class="categories">
+      <div class="category selected" data-category="All-Time">All Time</div>
+      <div class="category" data-category="Shōnen">Shōnen</div>
+      <div class="category" data-category="Shōjo">Shōjo</div>
+      <div class="category" data-category="Seinen">Seinen</div>
+      <div class="category" data-category="Manhwa">Manhwa</div>
+    </div>
+    <div id="roundIndicator">Round 1</div>
+  </header>
+
+  <div class="card-container">
+    <div class="card" id="card1"></div>
+    <div class="card" id="card2"></div>
+  </div>
+
+  <script>
+    // Données pour les différentes catégories
+    document.addEventListener('DOMContentLoaded', () => {
+
+    const categoriesData = {
+      "All-Time": [
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/OnePiece.jpg?v=1749800069071", title: "One Piece", description: "Luffy cherche le trésor légendaire pour devenir roi des pirates." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/NarutoS.jpg?v=1749799977039", title: "Naruto Shippuden", description: "Naruto veut devenir Hokage et sauver son ami Sasuke." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Dragon%20Ball%20Z.jpg?v=1749799157209", title: "Dragon Ball Z", description: "Goku protège la Terre contre de puissants ennemis." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/FullMetal%20Alchemist%20Brotherhood.jpg?v=1749799262398g", title: "FullMetal Alchemist Brotherhood", description: "Deux frères cherchent la pierre philosophale pour retrouver leurs corps." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Death%20Note.jpg?v=1749799016263", title: "Death Note", description: "Un lycéen découvre un carnet qui tue ceux dont on écrit le nom à l'intérieur." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Hunter%20x%20Hunter.jpg?v=1749799474803", title: "Hunter x Hunter", description: "Gon part à l’aventure pour devenir Hunter et retrouver son père." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/GTO.jpg?v=1749799351868", title: "GTO", description: "Un ancien voyou devient prof et tente d'éduquer une classe difficile." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Snk.jpg?v=1749800362465", title: "Snk", description: "L'humanité lutte pour survivre face à des titans mangeurs d'hommes." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Bleach.jpg?v=1749798619704", title: "Bleach", description: "Ichigo devient Shinigami pour combattre les esprits maléfiques." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/JoJo's%20Bizarre%20Adventure.jpg?v=1749799546635", title: "JoJo's Bizarre Adventure", description: "Chaque génération des Joestar affronte des ennemis étranges." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Fairy%20Tail.jpg?v=1749799193684", title: "Fairy Tail", description: "Une guilde de mages vit de folles aventures." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Slam%20Dunk.jpg?v=1749800348512", title: "Slam Dunk", description: "Un lycéen rebelle découvre sa passion pour le basket." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Kenshin%20le%20vagabond.jpg?v=1749799611274", title: "Kenshin Le Vagabond", description: "Un ancien assassin cherche la paix dans le Japon de l'ère Meiji." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Les%20Chevaliers%20du%20Zodiaque.jpg?v=1749799694761", title: "Les Chevaliers du Zodiaque", description: "Des chevaliers protègent la déesse Athéna avec leurs armures sacrées." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/One-Punch%20Man.jpg?v=1749800083665", title: "One-Punch Man", description: "Un héros trop fort bat tous ses ennemis en un coup." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Ippo.jpg?v=1749799529989", title: "Ippo", description: "Un lycéen timide devient un boxeur talentueux." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/My%20Hero%20Academia.jpg?v=1749799925991", title: "My Hero Academia", description: "Izuku veut devenir un héros dans un monde rempli de super-pouvoirs." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/YuYu%20Hakusho.jpg?v=1749800675586", title: "YuYu Hakusho", description: "Un adolescent meurt en sauvant un enfant et devient détective des esprits." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Eyeshield%2021.jpg?v=1749799176862", title: "Eyeshield 21", description: "Un lycéen timide devient star du football américain." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/D%C3%A9tective%20Conan.jpg?v=1749799083174", title: "Détective Conan", description: "Un jeune détective coincé dans un corps d’enfant résout des affaires." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Ken%20le%20survivant.jpg?v=1749799595989", title: "Ken le survivant", description: "Dans un monde post-apocalyptique, Ken protège les innocents." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Soul%20Eater.jpg?v=1749800379982", title: "Soul Eater", description: "Des élèves manient des armes vivantes pour chasser des âmes maléfiques." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Hikaru%20no%20Go.jpg?v=1749799439646", title: "Hikaru no Go", description: "Un garçon découvre le jeu de Go avec l’aide d’un fantôme." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Assassination%20Classroom.jpg?v=1749798460434", title: "Assassination Classroom", description: "Des élèves doivent tuer leur prof alien avant qu’il ne détruise la Terre." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Neon%20Genesis%20Evangelion.jpg?v=1749799992582", title: "Neon Genesis Evangelion", description: "Des adolescents pilotent des robots géants contre des créatures mystérieuses." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Shaman%20King.jpg?v=1749800318464", title: "Shaman King", description: "Yoh veut devenir roi des shamans pour parler avec les esprits." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Black%20Butler.jpg?v=1749798559386", title: "Black Butler", description: "Un jeune noble et son majordome démoniaque cherchent vengeance." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Blue%20Exorcist.jpg?v=1749798694340", title: "Blue Exorcist", description: "Rin découvre qu’il est le fils de Satan et devient exorciste." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Seven%20Deadly%20Sins.jpg?v=1749800301637", title: "Seven Deadly Sins", description: "Des chevaliers puissants veulent sauver le royaume." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Gintama.jpg?v=1749799311861", title: "Gintama", description: "Un samouraï paresseux vit des aventures absurdes dans un Japon futuriste." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Jujutsu%20Kaisen.jpg?v=1749799562817", title: "Jujutsu Kaisen", description: "Yuji combat des malédictions avec ses nouveaux pouvoirs." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Yu-Gi-Oh!.jpg?v=1749800658647", title: "Yu-Gi-Oh!", description: "Yugi résout des conflits à travers des duels de cartes magiques." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/The%20Promised%20Neverland.jpg?v=1749800468682", title: "The Promised Neverland", description: "Des enfants découvrent l’horrible vérité sur leur orphelinat." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Chainsaw%20Man.jpg?v=1749798857751", title: "Chainsaw Man", description: "Un chasseur de démons fusionne avec son chien-tronçonneuse." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Beelzebub.jpg?v=1749798530700g", title: "Beelzebub", description: "Un délinquant doit élever le fils du roi des démons." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Demon%20Slayer.jpg?v=1749799033368", title: "Demon Slayer", description: "Tanjirô combat les démons pour sauver sa sœur qui a été transformer en démon." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Magi%20-%20The%20Labyrinth%20of%20Magic.jpg?v=1749799728527", title: "Magi : The Labyrinth of Magic", description: "Des jeunes aventuriers explorent des donjons magiques." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/A%20Silent%20Voice.jpg?v=1749798411136", title: "A Silent Voice", description: "Un ancien harceleur veut se racheter auprès d’une fille sourde qu'il a harcelé." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Haikyu.jpg?v=1749799387204", title: "Haikyu", description: "Des lycéens passionnés se battent pour devenir les meilleurs en volley." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Black%20Clover.jpg?v=1749798576877", title: "Black Clover", description: "Asta, sans magie, rêve de devenir empereur-mage." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Kuroko%20no%20Basket.jpg?v=1749799674221", title: "Kuroko no Basket", description: "Un joueur discret aide son équipe à devenir la meilleure au basket." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Radiant.jpg?v=1749800169154", title: "Radiant", description: "Un jeune sorcier combat des monstres venus du ciel." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Food%20Wars.jpg?v=1749799227014", title: "Food Wars", description: "Un jeune chef affronte d’autres cuisiniers dans des duels culinaires." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Pok%C3%A9mon.jpg?v=1749800132542", title: "Pokémon", description: "Sacha parcourt le monde pour devenir maître Pokémon." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Beastars.jpg?v=1749798505277", title: "Beastars", description: "Dans un monde animal, un loup lutte contre sa nature." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Sakamoto%20Days.jpg?v=1749800248659", title: "Sakamoto Days", description: "Un ancien tueur à gages tente de vivre une vie paisible." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Tokyo%20Revengers.jpg?v=1749800519950", title: "Tokyo Revengers", description: "Un jeune homme voyage dans le passé pour sauver son amie d'enfance." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Mob%20Psycho%20100.jpg?v=1749799836041", title: "Mob Psycho 100", description: "Un garçon aux pouvoirs psychiques essaie de vivre normalement." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Baki.jpg?v=1749798489724", title: "Baki", description: "Un jeune combattant affronte les plus grands guerriers du monde." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Noragami.jpg?v=1749800023584", title: "Noragami", description: "Un dieu sans temple aide les humains pour quelques pièces." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Code%20Geass.jpg?v=1749798906443.jpg", title: "Code Geass", description: "Lelouch obtient un pouvoir pour renverser un empire." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Love%20Is%20Wars.jpg?v=1749799713446", title: "Love Is Wars", description: "Deux lycéens amoureux mènent une guerre psychologique pour faire craquer l’autre." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Tomodachi%20Game.jpg?v=1749800534176", title: "Tomodachi Game", description: "Des amis participent à un jeu cruel pour rembourser une dette." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Classroom%20Of%20The%20Elite.jpg?v=1749798892426", title: "Classroom Of The Elite", description: "Un lycée spécial forme les futurs élites du pays." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Fruit%20Basket.jpg?v=1749799242867", title: "Fruit Basket", description: "Une orpheline découvre une famille maudite liée au zodiaque chinois." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Inazuma%20Eleven.jpg?v=1749799512017", title: "Inazuma Eleven", description: "Une équipe de foot lycéenne vise les sommets grâce à des techniques spéciales." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Blue%20Lock.jpg?v=1749798712482", title: "Blue Lock", description: "Des attaquants s'affrontent pour devenir le numéro 1 du foot japonais." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Kingdom.jpg?v=1749799636100", title: "Kingdom", description: "Deux orphelins veulent unifier la Chine en pleine guerre." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Tokyo%20Ghoul.jpg?v=1749800501523", title: "Tokyo Ghoul", description: "Un étudiant devient mi-ghoul après une attaque et tente de garder son humanité." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Oshi%20No%20Ko.jpg?v=1749800097580", title: "Oshi No Ko", description: "Deux fans d'une idole renaissent dans le monde du showbiz ." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Devilman.jpg?v=1749799107540", title: "Devilman", description: "Un adolescent fusionne avec un démon pour sauver l’humanité." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Fire%20Force.jpg?v=1749799210988", title: "Fire Force", description: "Des pompiers spéciaux combattent des incendies causés par des combustions humaines." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Dr.Stone.jpg?v=1749799141055", title: "Dr.Stone", description: "3000 ans après la pétrificatioon de la Terre des survivants veulent reconstruire la civilisation grâce à la science." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Berserk.jpg?v=1749798544598", title: "Berserk", description: "Guts, un guerrier maudit, cherche vengeance dans un monde brutal." }
+      ],
+      "Shōnen": [
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Dragon%20Ball%20Z.jpg?v=1749799157209", title: "Dragon Ball Z", description: "Goku protège la Terre contre de puissants ennemis." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/OnePiece.jpg?v=1749800069071", title: "One Piece", description: "Luffy cherche le trésor légendaire pour devenir roi des pirates." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/GTO.jpg?v=1749799351868", title: "GTO", description: "Un ancien voyou devient prof et tente d'éduquer une classe difficile." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/NarutoS.jpg?v=1749799977039", title: "Naruto Shippuden", description: "Naruto veut devenir Hokage et sauver son ami Sasuke." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Death%20Note.jpg?v=1749799016263", title: "Death Note", description: "Un lycéen découvre un carnet qui tue ceux dont on écrit le nom à l'intérieur." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Demon%20Slayer.jpg?v=1749799033368", title: "Demon Slayer", description: "Tanjirô combat les démons pour sauver sa sœur qui a été transformé en demon." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/My%20Hero%20Academia.jpg?v=1749799925991", title: "My Hero Academia", description: "Izuku veut devenir un héros dans un monde rempli de super-pouvoirs." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/The%20Promised%20Neverland.jpg?v=1749800468682", title: "The Promised Neverland", description: "Des enfants découvrent l’horrible vérité sur leur orphelinat." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Chainsaw%20Man.jpg?v=1749798857751", title: "Chainsaw Man", description: "Un chasseur de démons fusionne avec son chien-tronçonneuse." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Fire%20Force.jpg?v=1749799210988", title: "Fire Force", description: "Des pompiers spéciaux combattent des incendies causés par des combustions humaines." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Soul%20Eater.jpg?v=1749800379982", title: "Soul Eater", description: "Des élèves manient des armes vivantes pour chasser des âmes maléfiques." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/FullMetal%20Alchemist%20Brotherhood.jpg?v=1749799262398", title: "FullMetal Alchemist", description: "Deux frères cherchent la pierre philosophale pour retrouver leurs corps." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Hunter%20x%20Hunter.jpg?v=1749799474803", title: "Hunter x Hunter", description: "Gon part à l’aventure pour devenir Hunter et retrouver son père." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Bleach.jpg?v=1749798619704", title: "Bleach", description: "Ichigo devient Shinigami pour combattre les esprits maléfiques." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Fairy%20Tail.jpg?v=1749799193684", title: "Fairy Tail", description: "Une guilde de mages vit de folles aventures." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/JoJo's%20Bizarre%20Adventure.jpg?v=1749799546635", title: "JoJo's Bizarre Adventure", description: "Chaque génération des Joestar affronte des ennemis étranges." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Tomodachi%20Game.jpg?v=1749800534176", title: "Tomodachi Game", description: "Des amis participent à un jeu cruel pour rembourser une dette." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Gurren%20Lagann.jpg?v=1749799369353", title: "Gurren Lagann", description: "Des adolescents pilotent des robots pour lutter contre des forces obscures." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Noragami.jpg?v=1749800023584", title: "Noragami", description: "Un dieu sans temple aide les humains pour quelques pièces." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Albator%2084.jpg?v=1749798426886", title: "Albator 84", description: "Un pirate de l’espace combat pour la liberté de l’humanité." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Overlord.jpg?v=1749800117902", title: "Overlord", description: "Un joueur reste coincé dans un jeu vidéo en tant que puissant sorcier." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Samurai%207.jpg?v=1749800269767", title: "Samurai 7", description: "Des samouraïs défendent un village contre des bandits." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/DanMachi.jpg?v=1749798926220", title: "DanMachi", description: "Un jeune aventurier explore des donjons avec l’aide de dieux." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Trigun.jpg?v=1749800569135", title: "Trigun", description: "Un tireur légendaire essaie d’éviter les conflits dans un monde désertique." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Charlotte.jpg?v=1749798874746", title: "Charlotte", description: "Des adolescents avec pouvoirs spéciaux cherchent leur place." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Gate.jpg?v=1749799294121", title: "Gate", description: "Des militaires explorent un portail vers un monde fantastique." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Seven%20Deadly%20Sins.jpg?v=1749800301637", title: "Seven Deadly Sins", description: "Des chevaliers puissants veulent sauver le royaume." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Gintama.jpg?v=1749799311861", title: "Gintama", description: "Un samouraï paresseux vit des aventures absurdes dans un Japon futuriste." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Eyeshield%2021.jpg?v=1749799176862", title: "Eyeshield 21", description: "Un lycéen timide devient star du football américain." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Yu-Gi-Oh!.jpg?v=1749800658647", title: "Yu-Gi-Oh!", description: "Yugi résout des conflits à travers des duels de cartes magiques." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Classroom%20Of%20The%20Elite.jpg?v=1749798892426", title: "Classroom Of The Elite", description: "Un lycée spécial forme les futurs élites du pays." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Kuroko%20no%20Basket.jpg?v=1749799674221", title: "Kuroko no Basket", description: "Un joueur discret aide son équipe à devenir la meilleure au basket." }
+      ],
+      "Shōjo": [
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Kaguya-sama.jpg?v=1749799578073", title: "Kaguya-sama:Love is War", description: "Deux génies amoureux se livrent une guerre psychologique pour ne pas avouer en premier." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Quintessential%20Quintuplets.jpg?v=1749800151306", title: "Quintessential Quintuplets", description: "Un étudiant donne des cours à cinq sœurs qui tombent peu à peu amoureuses." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Fruit%20Basket.jpg?v=1749799242867", title: "Fruit Basket", description: "Une fille découvre qu’une famille se transforme en animaux du zodiaque." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Blue%20Box.jpg?v=1749798640180", title: "Blue Box", description: "Un sportif timide vit sous le même toit que sa crush basketteuse." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Nisekoi.jpg?v=1749800006403", title: "Nisekoi", description: "Deux lycéens doivent faire semblant de sortir ensemble malgré leurs rancunes." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Darling%20in%20the%20Franxx.jpg?v=1749798939915", title: "Darling in the Franxx", description: "Des ados pilotent des robots et découvrent l’amour dans un monde en ruine." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Nana.jpg?v=1749799960211", title: "Nana", description: "Deux femmes nommées Nana partagent un appart et vivent des histoires d’amour intenses" },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/More%20than%20a%20Married%20Couple.jpg?v=1749799878009", title: "More than a Married Couple but Not Lovers", description: "Deux lycéens cohabitent comme un faux couple pour un projet scolaire." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/I%20Want%20to%20Eat%20Your%20Pancreas.jpg?v=1749799490393", title: "I Want to Eat Your Pancreas", description: "Un garçon renfermé devient l’ami d’une fille malade et pleine de vie." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Maid%20Sama.jpg?v=1749799747309", title: "Maid Sama", description: "Une présidente sévère cache son job de maid à l’école… jusqu’à ce qu’un garçon le découvre." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Wotakoi.jpg?v=1749800602931", title: "Wotakoi: Love is Hard for Otaku", description: "Deux collègues otakus commencent une relation drôle et réaliste." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Blue%20Spring%20Ride.jpg?v=1749798740609", title: "Blue Spring Ride", description: "Une fille retrouve son amour de jeunesse devenu froid et distant." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/To%20Love-ru.jpg?v=1749800484916", title: "To Love-ru", description: " Un garçon timide est fiancé à une extraterrestre imprévisible." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Your%20Lie%20in%20April.jpg?v=1749800624262", title: "Your Lie in April", description: "Un pianiste brisé retrouve la passion grâce à une violoniste excentrique." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Tonikaku%20Kawaii.jpg?v=1749800549989", title: "Tonikaku Kawaii", description: "Un couple marié jeune vit une romance douce et mystérieuse." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Nagatoro.jpg?v=1749799943951", title: "Arrête de me chauffer, Nagatoro", description: " Une fille taquine un garçon timide qu’elle aime en secret." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Domestic%20Girlfriend.jpg?v=1749799125436", title: "Domestic Girlfriend", description: "Un garçon est pris dans un triangle amoureux avec ses deux demi-sœurs." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Rent-A-Girlfriend.jpg?v=1749800212645", title: "Rent-A-Girlfriend", description: "Un étudiant loue une copine et finit par tomber amoureux d’elle." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Date%20A%20Live.jpg?v=1749798954584", title: "Date A Live", description: "Pour sauver le monde, un garçon séduit des filles aux pouvoirs destructeurs." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Komi.jpg?v=1749799656013", title: "Komi Cherche ses Mots", description: " Une fille trop timide veut se faire 100 amis grâce à un camarade gentil." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Your%20Name.jpg?v=1749800642385", title: "Your Name", description: " Deux lycéens échangent de corps et tombent amoureux à travers le temps." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Horimiya.jpg?v=1749799459024", title: "Horimiya", description: "Un garçon discret et une fille populaire se découvrent hors du lycée." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Shikimori.jpg?v=1749800333069", title: "Shikimori's Not Just a Cutie", description: "Une fille mignonne mais badass protège son copain maladroit." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/The%20Dangers%20in%20my%20Heart.jpg?v=1749800452314", title: "The Dangers in my Heart", description: "Un garçon sombre tombe amoureux d’une fille joyeuse et populaire." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Call%20of%20the%20Night.jpg?v=1749798831112", title: "Call of the Night", description: "Un garçon insomniaque va tomber amoureux en voulant devenir un vampire." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/The%20100%20Girlfriends.jpg?v=1749800417830", title: "Les 100 petites amies qui t'aiiiment à en mourir", description: "Un garçon doit sortir avec 100 filles qui l’aiment vraiment, sinon elles meurent." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/My%20Dress-Up%20Darling.jpg?v=1749799894061", title: "My Dress-Up Darling", description: "Un garçon passionné de poupée traditionnelle aide une fille cosplayeuse à réaliser ses rêves." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Spice%20and%20Wolf.jpg?v=1749800398399", title: "Spice and Wolf", description: "Un marchand voyage avec une déesse louve maligne et séduisante." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Roshidere.jpg?v=1749800228830g", title: "Alya Sometimes Hides Her Feelings in Russian", description: "Un génie tombe amoureux d'une fille qui parle en russe lorsqu'elle est embarrassée" },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/My%20Happy%20Marriage.jpg?v=1749799909976", title: "My Happy Marriage", description: "Une fille rejetée trouve enfin de l’amour dans un mariage arrangé." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Bunny%20Girl%20Senpai.jpg?v=1749798778360", title: "Rascal Does Not Dream of Bunny Girl Senpai", description: "Un garçon aide une actrice invisible à ne pas disparaître." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/The%20Angel%20Next%20Door.jpg?v=1749800433523", title: "The Angel Next Door Spoils Me Rotten", description: "Une voisine parfaite prend soin d’un garçon ordinaire et se rapproche de lui." },
+      ],
+      "Seinen": [
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Death%20Note.jpg?v=1749799016263", title: "Death Note", description: "Un lycéen découvre un carnet qui tue les gens dont il écrit le nom à l'intérieur." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Snk.jpg?v=1749800362465", title: "Snk", description: "Des humains luttent pour survivre face à des titans mangeurs d'hommes." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Btooom!.jpg?v=1749798763071", title: "Btooom!", description: "Un jeune est piégé sur une île où il doit tuer pour survivre avec des bombes." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Black%20Lagoon.jpg?v=1749798595929", title: "Black Lagoon", description: "Un employé devient pirate après avoir été enlevé par un groupe de mercenaires." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Blue%20Exorcist.jpg?v=1749798694340", title: "Blue Exorcist", description: "Un ado découvre qu’il est le fils de Satan et décide de le combattre." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Rainbow.jpg?v=1749800195901", title: "Rainbow", description: "Des jeunes délinquants affrontent la cruauté dans un centre de détention au Japon." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Samurai%20Champloo.jpg?v=1749800284591", title: "Samurai Champloo", description: "Trois voyageurs aux styles différents cherchent un samouraï qui sent le tournesol." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Monster.jpg?v=1749799854553", title: "Monster", description: "Un chirurgien traque un tueur en série qu’il a sauvé enfant." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/High%20School%20of%20the%20Dead.jpg?v=1749799423149", title: "High School of the Dead", description: "Des lycéens tentent de survivre dans un monde envahi par les zombies." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Berserk.jpg?v=1749798544598", title: "Berserk", description: "Un guerrier maudit affronte des démons dans un monde brutal et médiéval." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Tokyo%20Ghoul.jpg?v=1749800501523", title: "Tokyo Ghoul", description: "Un étudiant devient mi-goule après une attaque et lutte pour garder son humanité." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Hellsing%20Ultimate.jpg?v=1749799403029", title: "Hellsing Ultimate", description: "Une organisation chasse les vampires avec l’aide d’un puissant immortel." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Kingdom.jpg?v=1749799636100", title: "Kingdom", description: "Deux orphelins rêvent de devenir grands généraux dans la Chine ancienne." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/20th%20Century%20Boys.jpg?v=1749798372355", title: "20th Century Boys", description: "Un groupe d’amis tente d’arrêter une secte liée à un jeu qu’ils ont inventé enfants." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Grand%20Blue.jpg?v=1749799331305", title: "Grand Blue", description: "Un étudiant découvre la plongée sous-marine… et les excès de la vie étudiante." },
+        { image: "https://cdn.glitch.global/92297865-8423-4fe1-928c-10e45fd760d7/Vagabond.jpg?v=1749800584671", title: "Vagabond", description: "L’histoire romancée du célèbre samouraï Miyamoto Musashi." },
+      ],
+      "Manhwa": [
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Solo%20Leveling.jpg?v=1749755167270", title: "Solo Leveling", description: "Après avoir été le plus faible des chasseurs, Sung Jin-woo découvre un mystérieux « journal de quête » qui lui permet de monter de niveau indépendamment des autres. Devenu le chasseur le plus puissant, il affronte des donjons et des êtres surnaturels pour protéger l’humanité." },  
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/The%20Breaker.jpg?v=1749755233117", title: "The Breaker", description: "Shi-woon Yi, un lycéen timide et harcelé, devient l’élève de Chun-woo Han, un maître des arts martiaux caché. En apprenant le murim, il se retrouve mêlé à des complots et des combats où l’honneur et la loyauté sont en jeu." },  
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Tower%20of%20God.jpg?v=1749755289425", title: "Tower of God", description: "Bam pénètre dans la Tour mystérieuse pour retrouver Rachel, son amie disparue. À chaque étage, il doit passer des épreuves mortelles et affronter d’autres candidats, tout en découvrant les secrets du pouvoir qui régit la Tour." },  
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/The%20beginning%20after%20the%20end.jpg?v=1749755182839", title: "The beginning after the end", description: "Grey, ancien roi surpuissant, renaît en tant qu’enfant nommé Arthur dans un monde magique. Il tente de concilier sa connaissance passée avec la vie d’étudiant en magie, tout en protégeant ceux qu’il aime." }, 
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/God%20Of%20high%20school.jpg?v=1749755115077", title: "God Of high school", description: "Un tournoi d’arts martiaux à l’échelle mondiale désigne le combattant le plus fort du lycée. Mori Jin et ses amis découvrent que des entités divines manipulent le tournoi pour leurs propres desseins." }, 
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/The%20runway.jpg?v=1749755277894", title: "The runway", description: "Jian, rédactrice dans un magazine de mode, part précipitamment à Paris après avoir découvert l’infidélité de son ex-fiancé. Elle y croise un mystérieux homme qui deviendra son supérieur et bouleversera sa vie." },  
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Eleceed.jpg?v=1749755056795", title: "Eleceed", description: "Jisuk Yoo, un jeune homme rapide comme l’éclair, se lie d’amitié avec Kayden, un agent secret emprisonné dans le corps d’un chat. Ensemble, ils affrontent des utilisateurs de pouvoirs surnaturels et protègent le monde." }, 
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/The%20Boxer.jpg?v=1749755218863", title: "The Boxer", description: "Yu, un prodige du ring sans émotions, affronte adversaire après adversaire pour découvrir pourquoi il boxe. Des combats intenses mettent en lumière les traumatismes et les espoirs des boxeurs." }, 
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Who%20Made%20Me%20a%20Princess.jpg?v=1749755320339", title: "Who Made Me A Princess", description: "Une lectrice se réincarne dans un roman en tant qu’Erméa, princesse condamnée à mort. Pour survivre, elle doit gagner la faveur de son père, l’empereur impitoyable." }, 
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Wind%20Breaker.jpg?v=1749755332902", title: "Wind Breaker", description: "Jay, lycéen livreur, utilise sa moto pour réaliser des missions à haut risque. Ses exploits attirent la convoitise d’équipes de racers et le plongent dans un monde de courses illégales." }, 
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Lecteur%20Omniscient.jpg?v=1749755134159", title: "Lecteur Omniscient", description: "Kim Dok-ja acquiert la capacité de voir les statistiques et compétences des personnes autour de lui, comme dans un jeu vidéo. Il entreprend de changer le destin tragique de son entourage grâce à ce pouvoir." }, 
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/The%20Gamer.jpg?v=1749755248017", title: "The Gamer", description: "Han Jee-han découvre du jour au lendemain qu’il vit dans un univers soumis à des règles de jeu vidéo : XP, quêtes, et compétences. Il explore ce nouveau pouvoir tout en affrontant des menaces surnaturelles." },  
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Unordinary.jpg?v=1749755305085", title: "Unordinary", description: "Dans une société où chacun possède des super-pouvoirs, John Doe est inexplicablement ordinaire. Il cache pourtant un lourd secret qui bouleversera l’équilibre du lycée Ellingham." },  
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Lokism.jpg?v=1749755153584", title: "Lokism", description: "Dans Lookism, Park Hyung-suk alterne entre deux corps : un obèse et un athlétique, découvrant comment son apparence influence la perception des autres dans son lycée." },  
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/The%20Reborn%20Young%20lord%20is%20an%20Assassin.jpg?v=1749755260435", title: "The Reborn Young Lord is an Assassin", description: "Cyan Vert, héritier déchu et fils illégitime du duc, renaît pour se venger. Utilisant son savoir d’assassin, il manœuvre dans les intrigues de la cour pour reprendre son trône." }, 
+        { image: "https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/The%20Blood%20of%20the%20Butterfly.jpg?v=1749755205819", title: "The Blood of the Butterfly", description: "Lorsque d’immenses insectes envahissent la Terre, seuls les « Butterflies » — humains dotés de pouvoirs spéciaux — peuvent les combattre. Maehwa Baek, l’un des quatrième Butterflies, découvre ses origines et son passé oublié." }  
+      ]};
+      // set up du tournoi
+             let selectedCategory = "All-Time";
+  let currentRound = [];
+  let winners = [];
+  let pairIndex = 0;
+  let roundNumber = 1;
+  let totalRounds = 0;
+
+  const card1 = document.getElementById('card1');
+  const card2 = document.getElementById('card2');
+  const roundIndicator = document.getElementById('roundIndicator');
+  const categoryElements = document.querySelectorAll('.category');
+  const cardContainer = document.querySelector('.card-container');
+
+  function normalizeCategory(cat) {
+    return cat.trim().toLowerCase();
+  }
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  function updateRoundIndicator() {
+    roundIndicator.textContent = `Round ${roundNumber} sur ${totalRounds} (${currentRound.length} participants)`;
+  }
+
+  async function loadPair() {
+  console.log("loadPair appelé, winners.length :", winners.length, "winners :", winners);
+  if (pairIndex < currentRound.length - 1) {
+    const leftManga = currentRound[pairIndex];
+    const rightManga = currentRound[pairIndex + 1];
+    card1.innerHTML = `
+      <img src="${leftManga.image}" alt="${leftManga.title}">
+      <div class="info">
+        <h2>${leftManga.title}</h2>
+        <p>${leftManga.description}</p>
+      </div>
+    `;
+    card2.innerHTML = `
+      <img src="${rightManga.image}" alt="${rightManga.title}">
+      <div class="info">
+        <h2>${rightManga.title}</h2>
+        <p>${rightManga.description}</p>
+      </div>
+    `;
+  } else {
+    if (winners.length === 1) {
+      console.log("Fin du tournoi atteinte, gagnant :", winners[0], "title :", winners[0].title);
+
+      // Créer la structure JSON
+      const nouvelElement = {
+        id: Date.now(),
+        details: {
+          Pseudo: localStorage.pseudo || '',
+          Age: localStorage.age,
+          Sexe: localStorage.genre,
+          Manga: {
+            Titre: winners[0].title , Cat:selectedCategory},
+        }
+      };
+      console.log("nouvelElement créé :", JSON.stringify(nouvelElement, null, 2));
+
+      // Envoyer la requête
+      let responseMessage = 'Envoi en cours...';
+      try {
+        console.log("Tentative d'envoi des données :", nouvelElement);
+        const response = await fetch('https://ptut-anime.glitch.me/ajouterElementJSON', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(nouvelElement)
+        });
+
+        if (!response.ok) {
+          throw new Error(`Erreur HTTP ${response.status}`);
+        }
+
+        responseMessage = await response.text();
+        console.log("Réponse du serveur :", responseMessage);
+      } catch (error) {
+        console.error("Erreur lors de l'envoi :", error);
+        responseMessage = `Erreur lors de l'envoi : ${error.message}`;
+      }
+    
+  document.body.classList.add('victory-background');
+  document.body.innerHTML = `
+    <button class="btn-finish">← Retour immédiat</button>
+    <div class="winner">
+      <h1>🏆 Manga Gagnant 🏆</h1>
+      <h2>${winners[0].title}</h2>
+      <img src="${winners[0].image}" alt="${winners[0].title}" class="winner-img">
+      <p>${winners[0].description}</p>
+      <p class="compte-rebours">Retour à l'accueil dans <span id="countdown">10</span> secondes...</p>
+      <button id="btn-stats" class="gradient-button">📊 Accéder aux Statistiques</button>
+    </div>
+  `;
+
+  document.getElementById('btn-stats').addEventListener('click', () => {
+    window.location.href = 'statistiques.html';
+  });
+
+  let seconds = 10;
+  const countdownEl = document.getElementById("countdown");
+  const timer = setInterval(() => {
+    seconds--;
+    countdownEl.textContent = seconds;
+    if (seconds <= 0) {
+      clearInterval(timer);
+      window.location.href = "Manga.html";
+    }
+  }, 1000);
+
+  document.querySelector('.btn-finish').addEventListener('click', () => {
+    clearInterval(timer);
+    window.location.href = "Manga.html";
+  });
+
+      } else {
+        currentRound = winners;
+        winners = [];
+        pairIndex = 0;
+        roundNumber++;
+        shuffleArray(currentRound);
+        updateRoundIndicator();
+        loadPair();
+      }
+    }
+  }
+
+  function chooseWinner(index) {
+    winners.push(currentRound[pairIndex + index]);
+    pairIndex += 2;
+    loadPair();
+  }
+
+  function initializeTournament() {
+    const keys = Object.keys(categoriesData);
+    const foundKey = keys.find(k => normalizeCategory(k) === normalizeCategory(selectedCategory));
+
+    if (foundKey && categoriesData[foundKey].length > 0) {
+      currentRound = [...categoriesData[foundKey]];
+      totalRounds = Math.log2(currentRound.length);
+      if (!Number.isInteger(totalRounds)) {
+        const validLength = Math.pow(2, Math.floor(totalRounds));
+        currentRound = currentRound.slice(0, validLength);
+        totalRounds = Math.floor(totalRounds);
+      }
+      shuffleArray(currentRound);
+      winners = [];
+      pairIndex = 0;
+      roundNumber = 1;
+      updateRoundIndicator();
+      loadPair();
+    } else {
+      cardContainer.innerHTML = `<div class="winner"><h2>Aucun anime pour cette catégorie</h2></div>`;
+      roundIndicator.textContent = '';
+    }
+  }
+
+  categoryElements.forEach(elem => {
+    elem.addEventListener('click', () => {
+      categoryElements.forEach(e => e.classList.remove('selected'));
+      elem.classList.add('selected');
+      selectedCategory = elem.getAttribute('data-category');
+      initializeTournament();
+    });
+  });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+  if (categoryParam) {
+    selectedCategory = categoryParam;
+    categoryElements.forEach(e => e.classList.remove('selected'));
+    const targetCat = Array.from(categoryElements).find(c => normalizeCategory(c.dataset.category) === normalizeCategory(categoryParam));
+    if (targetCat) targetCat.classList.add('selected');
+  }
+
+  card1.addEventListener('click', () => chooseWinner(0));
+  card2.addEventListener('click', () => chooseWinner(1));
+
+  initializeTournament();
+});
+    </script>
+  
+  </body>
+  </html>

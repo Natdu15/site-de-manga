@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Jouer maintenant</title>
+  <link rel="stylesheet" href="css/menu-game.css">
+  <script src="js/style.js" defer></script>
+</head>
+<body>
+
+<div class="razer-wrapper">
+  <!-- MENU PRINCIPAL -->
+  <div class="razer-menu">
+    <div class="razer-menu-item" data-menu="manga">Manga</div>
+    <div class="razer-menu-item" data-menu="anime">Anime</div>
+    <div class="razer-menu-item" data-menu="personnage">Personnage</div>
+  </div>
+
+  <!-- SOUS-MENUS -->
+  <div id="submenu-manga" class="razer-submenu">
+    <div class="submenu-column">
+      <h4>Liste des mangas</h4>
+      <a href="Manga.html">All time</a>
+      <a href="Manga.html?category=Shōnen">Shōnen</a>
+      <a href="Manga.html?category=Shōjo">Shōjo</a>
+      <a href="Manga.html?category=Seinen">Seinen</a>
+      <a href="Manga.html?category=Manhwa">Manhwa</a>
+    </div>
+    <div class="submenu-column">
+      <h4>Le classement de la communauté</h4>
+      <a href="statistiques.html">Classement</a>
+    </div>
+  </div>
+
+  <div id="submenu-anime" class="razer-submenu">
+    <div class="submenu-column">
+      <h4>Liste des animés</h4>
+      <a href="Anime.html">All time</a>
+      <a href="Anime.html?category=Shōnen">Shōnen</a>
+      <a href="Anime.html?category=Shōjo">Shōjo</a>
+      <a href="Anime.html?category=Seinen">Seinen</a>
+    </div>
+    <div class="submenu-column">
+      <h4>Le classement de la communauté</h4>
+      <a href="statistiques.html">Classement</a>
+    </div>
+  </div>
+
+  <div id="submenu-personnage" class="razer-submenu">
+    <div class="submenu-column">
+      <h4>Liste des personnages</h4>
+      <a href="Personnage.html">All time</a>
+      <a href="Personnage.html?category=Demon Slayer">Demon Slayer</a>
+      <a href="Personnage.html?category=One Piece">One Piece</a>
+      <a href="Personnage.html?category=Bleach">Bleach</a>
+      <a href="Personnage.html?category=Dragon Ball Z">Dragon Ball Z</a>
+      <a href="Personnage.html?category=Fairy Tail">Fairy Tail</a>
+      <a href="Personnage.html?category=Naruto Shippuden">Naruto Shippuden</a>
+      <a href="Personnage.html?category=SNK">SNK</a>
+      <a href="Personnage.html?category=Blue Lock">Blue Lock</a>
+      <a href="Personnage.html?category=Jujutsu Kaisen">Jujutsu Kaisen</a>
+      <a href="Personnage.html?category=MHA">MHA</a>
+      <a href="Personnage.html?category=Fire Force">Fire Force</a>
+      <a href="Personnage.html?category=Tokyo Ghoul">Tokyo Ghoul</a>
+      <a href="Personnage.html?category=Nanatsu No Taizai">Nanatsu No Taizai</a>
+      <a href="Personnage.html?category=Classroom Of The Elite">Classroom Of The Elite</a>
+    </div>
+    <div class="submenu-column">
+      <h4>Le classement de la communauté</h4>
+      <a href="statistiques.html">Classement</a>
+    </div>
+  </div>
+
+</div>
+
+<nav>
+  <ul class="menu">
+    <li><a href="testcss.html">Accueil</a></li>
+    <li><a href="explication.html">Explication des jeux</a></li>
+    <li class="dropdown">
+      <a href="Jouer maintenant.html">Jouez maintenant</a>
+    </li>
+    <li><a href="contact.html">Nous contacter</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="bloc-manga" onclick="window.location.href='Manga.html'">
+    <img src="https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Manga.jpg?v=1749755382187" alt="Manga">
+    <h2>Manga</h2>
+    <p>Découvrez l'histoire et l'évolution des mangas à travers le temps.</p>
+  </div>
+  <div class="bloc-anime" onclick="window.location.href='Anime.html'">
+    <img src="https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/Anime.jpg?v=1749806291068" alt="Anime">
+    <h2>Animé</h2>
+    <p>Explorez les adaptations animées de vos mangas préférés.</p>
+  </div>
+  <div class="bloc-personnages" onclick="window.location.href='Personnage.html'">
+    <img src="https://cdn.glitch.global/753b2206-8aec-499d-95ff-df1dc687ac0e/AllCaractere.jpg?v=1749755456316" alt="Personnage">
+    <h2>Personnage</h2>
+    <p>Plongez dans l'univers des personnages emblématiques des mangas.</p>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Gestion des sous-menus au survol ---
+  const menuItems = document.querySelectorAll('.razer-menu-item');
+  const submenus = document.querySelectorAll('.razer-submenu');
+  let activeSubmenu = null;
+
+  menuItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const targetId = 'submenu-' + item.dataset.menu.toLowerCase();
+      const targetMenu = document.getElementById(targetId);
+
+      submenus.forEach(sm => sm.classList.remove('active'));
+      if (targetMenu) {
+        targetMenu.classList.add('active');
+        activeSubmenu = targetMenu;
+      }
+    });
+  });
+
+  document.querySelector('.razer-wrapper').addEventListener('mouseleave', () => {
+    if (activeSubmenu) {
+      activeSubmenu.classList.remove('active');
+      activeSubmenu = null;
+    }
+  });
+
+  // --- Gestion de la sélection automatique d'une catégorie via l'URL ---
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+
+  if (categoryParam) {
+    const allCategories = document.querySelectorAll('.category');
+
+    allCategories.forEach(cat => {
+      cat.classList.remove('selected');
+    });
+
+    const target = Array.from(allCategories).find(cat =>
+      cat.dataset.category.toLowerCase() === categoryParam.toLowerCase()
+    );
+
+    if (target) {
+      target.classList.add('selected');
+
+      // Appelle la fonction de filtrage si elle existe
+      if (typeof filterByCategory === 'function') {
+        filterByCategory(categoryParam);
+      }
+    }
+  }
+});
+</script>
+
+
+</body>
+</html>

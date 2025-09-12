@@ -1,0 +1,371 @@
+:root {
+    --primary-color: #EADFFF;
+    --accent-violet: #7B3ECC;
+    --accent-blue: #3E8EB3;
+    --bg-dark: #0C0A26;
+    --bg-darker: #000000;
+    --shadow-violet: rgba(100, 65, 165, 0.5);
+    --input-bg: rgba(50, 30, 80, 0.9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #2A1540, var(--bg-dark), var(--bg-darker));
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--primary-color);
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+header {
+    background: rgba(12, 10, 38, 0.9);
+    padding: 1.5rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--shadow-violet);
+}
+
+.logo {
+    font-family: 'Bangers', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-violet);
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-shadow: 0 0 6px var(--accent-violet);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+    color: #D4E4FF;
+}
+
+nav {
+    background: rgba(12, 10, 38, 0.9);
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 5rem;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--shadow-violet);
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+nav a:hover, nav a[aria-current="page"] {
+    color: #00d5ff;
+    background: rgba(123, 62, 204, 0.2);
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    flex-grow: 1;
+}
+
+#contact-form {
+    max-width: 600px;
+    width: 100%;
+    background: rgba(12, 10, 38, 0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px var(--shadow-violet);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+input, textarea {
+    background: var(--input-bg);
+    border: 1px solid var(--accent-violet);
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 8px var(--accent-blue);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffd700;
+}
+
+.extra-feedback {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.extra-feedback.active {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+.feedback-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.feedback-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feedback-item label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #D4E4FF;
+}
+
+button {
+    background: linear-gradient(90deg, var(--accent-violet), var(--accent-blue));
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--accent-blue);
+}
+
+.confirmation {
+    color: #D4E4FF;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        top: 4rem;
+    }
+
+    .contact-container {
+        padding: 1rem;
+    }
+
+    #contact-form {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    input, textarea {
+        padding: 0.5rem;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+    }
+
+    .feedback-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 0;
+  }
+
+  .logo {
+    font-size: clamp(1.2rem, 4vw, 1.4rem);
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 4.5vw, 2rem);
+  }
+
+  header p {
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    top: 0;
+    padding: 0.5rem 0;
+  }
+
+  nav a {
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+    padding: 0.4rem 0.8rem;
+  }
+
+  .contact-container {
+    padding: 1rem;
+  }
+
+  #contact-form {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .form-group label {
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  input, textarea {
+    padding: 0.6rem;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  .star-rating label {
+    font-size: 1.2rem;
+  }
+
+  .feedback-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feedback-item label {
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  .confirmation {
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.75rem 0;
+  }
+
+  .logo {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+
+  h1 {
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+  }
+
+  nav {
+    gap: 0.3rem;
+  }
+
+  nav a {
+    padding: 0.3rem 0.6rem;
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  }
+
+  #contact-form {
+    padding: 0.75rem;
+  }
+
+  input, textarea {
+    padding: 0.5rem;
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  }
+
+  .star-rating label {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.5rem 0.8rem;
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  }
+}

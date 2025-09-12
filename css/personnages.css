@@ -1,0 +1,288 @@
+/* Réinitialisation et styles globaux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column; /* Empile les éléments verticalement */
+  align-items: center;    /* Centre horizontalement */
+  padding-top: 10vh;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #e94560);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: rgb(201, 201, 201);
+  text-align: center;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+header h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+header p {
+  font-size: 1.2em;
+}
+/* Zone des catégories */
+.categories {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-radius: 80px;
+}
+.category {
+  padding: 10px 15px;
+  background-color: none ;
+  border: 1px solid #aed404;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #00ffcc;
+}
+
+.selected {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #9ed113;
+}
+/* Indicateur de round */
+#roundIndicator {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* Style des cartes */
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.card {
+  background: #3d3d3d;
+  border-radius: 40px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 700px;
+  height: 550%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+.card img {
+  width: 100%;
+  height: 500px;
+  object-fit: inherit;
+}
+.card .info {
+  padding: 20px;
+  text-align: center;
+}
+/* Style du vainqueur final */
+.winner {
+  text-align: center;
+  margin: 10px auto;
+  padding: 16px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* Image gagnante */
+.winner img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 99, 71, 0.4);
+}
+
+/* Titres */
+.winner h1 {
+  font-size: 2.2rem;
+  color: #00ffcc;
+  margin: 12px 0 8px;
+}
+
+.winner h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 8px 0;
+}
+
+/* Description et texte */
+.winner p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 6px 0;
+  padding: 0 10px;
+}
+
+
+.info {
+  padding: 10px;
+}
+
+#countdown {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #4800ff;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px ; /* Plus d'espace intérieur */
+  font-size: 15px;
+  border-top: 3px solid #00ff33;
+  margin-top: 50px; /* Espace entre le contenu et le footer */
+  padding: 30px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.victory-background {
+  background: linear-gradient(-45deg, #FFD700, #B8860B, #4B3621, #000000);
+  color: #000000;
+  background-size: 400% 400%;
+  animation: gradientBG 6s ease infinite;
+}
+@media (max-width: 768px) {
+  body {
+    padding-top: 5vh;
+  }
+
+  header h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  header p {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+
+  .categories {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .category {
+    padding: 8px 12px;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    max-width: 400px;
+  }
+
+  .card img {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .card .info {
+    padding: 10px;
+  }
+
+  .winner {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .winner img {
+    max-width: 300px;
+  }
+
+  .winner h1 {
+    font-size: clamp(1.5rem, 5vw, 1.8rem);
+  }
+
+  .winner h2 {
+    font-size: clamp(1.2rem, 4vw, 1.4rem);
+  }
+
+  .winner p {
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  #countdown {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
+
+  footer {
+    padding: 15px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+  }
+
+  .categories {
+    gap: 6px;
+  }
+
+  .category {
+    padding: 6px 10px;
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .winner img {
+    max-width: 250px;
+  }
+
+  #countdown {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+
+  footer {
+    padding: 10px;
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  }
+}

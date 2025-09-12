@@ -1,0 +1,132 @@
+  .btn-retour {
+    position: relative;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: #00ffcc;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #00ffcc, #ff00cc);
+    border-image-slice: 1;
+    background: none;
+    cursor: pointer;
+    transition: color 0.4s ease;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .btn-retour::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(45deg, #00ffcc, #ff00cc);
+    transition: all 0.6s ease;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  
+  .btn-retour:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.2;
+  }
+  
+  .btn-retour:hover {
+    color: #ffffff;
+  }
+  
+
+  /* Bouton de fin complètement différent */
+.btn-finish {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 18px;
+  color: #00fbff;
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg,#C0F8E0, #2F5D62);
+  border-image-slice: 1;
+  background: none;
+  cursor: pointer;
+  transition: color 0.4s ease;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Effet au survol */
+.btn-finish:hover {
+  color: #ffffff;
+
+}
+
+.btn-finish::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg,#C0F8E0, #2F5D62);
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.btn-finish:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.2;
+}
+
+
+/* Espacement du bouton sans div intermédiaire */
+.gradient-button {
+  margin-top: 40px;
+  background: linear-gradient(270deg, #ff5f6d, #ffc371, #ff5f6d);
+  background-size: 600% 600%;
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 99, 71, 0.4);
+  transition: transform 0.2s ease;
+  animation: gradientShift 5s ease infinite;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+  .btn-retour, .btn-finish, .gradient-button {
+    padding: 10px 20px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+
+  .gradient-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-retour, .btn-finish {
+    padding: 8px 16px;
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+  }
+
+  .gradient-button {
+    padding: 10px 20px;
+    font-size: clamp(0.8rem, 2.8vw, 0.9rem);
+    border-radius: 40px;
+  }
+}
