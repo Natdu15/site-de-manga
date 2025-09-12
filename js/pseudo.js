@@ -35,6 +35,6 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("genre", genre);
 
         // Redirection vers la deuxième page
-        window.location.href = "testcss.html";
+        window.location.href = "accueil.html";
     });
 });
