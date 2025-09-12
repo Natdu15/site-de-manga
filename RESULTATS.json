@@ -1,0 +1,1550 @@
+[
+  {
+    "id": 1749911121071,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Kaguya-sama:Love is War",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1749911205987,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Solo Leveling",
+        "Cat": "Manhwa"
+      }
+    }
+  },
+  {
+    "id": 1749911306559,
+    "details": {
+      "Pseudo": "NikLesJuifs",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "SNK",
+        "Nom": "Eren Jäger"
+      }
+    }
+  },
+  {
+    "id": 1749911812993,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "The Blood of the Butterfly",
+        "Cat": "Manhwa"
+      }
+    }
+  },
+  {
+    "id": 1749911946458,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Demon Slayer",
+        "Nom": "Kokushibo"
+      }
+    }
+  },
+  {
+    "id": 1749912119867,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Fairy Tail",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749912158374,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1749912390956,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "One Piece",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1749912581262,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Zoro"
+      }
+    }
+  },
+  {
+    "id": 1749912739904,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1749912834138,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Zoro"
+      }
+    }
+  },
+  {
+    "id": 1749913005268,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "SNK",
+        "Nom": "Eren Jäger"
+      }
+    }
+  },
+  {
+    "id": 1749913030655,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "My Hero Academia",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1749913198260,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "SNK",
+        "Nom": "Eren Jäger"
+      }
+    }
+  },
+  {
+    "id": 1749913200065,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "SNK",
+        "Nom": "Eren Jäger"
+      }
+    }
+  },
+  {
+    "id": 1749913212555,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1749913261295,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Kaguya-sama:Love is War",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1749913285259,
+    "details": {
+      "Pseudo": "Goat",
+      "Age": 16,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Slam Dunk",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749913293756,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Snk",
+        "Cat": "Seinen"
+      }
+    }
+  },
+  {
+    "id": 1749913310257,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "MHA",
+        "Nom": "Izuku Midoriya"
+      }
+    }
+  },
+  {
+    "id": 1749913313557,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "The Boxer",
+        "Cat": "Manhwa"
+      }
+    }
+  },
+  {
+    "id": 1749913347556,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Snk",
+        "Cat": "Seinen"
+      }
+    }
+  },
+  {
+    "id": 1749913439461,
+    "details": {
+      "Pseudo": "Goat",
+      "Age": 16,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749913481957,
+    "details": {
+      "Pseudo": "Shynsei",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Dragon Ball Z",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749913608576,
+    "details": {
+      "Pseudo": "Goat",
+      "Age": 16,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Kuroro"
+      }
+    }
+  },
+  {
+    "id": 1749913825380,
+    "details": {
+      "Pseudo": "Shynsei",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Sosuke Aizen"
+      }
+    }
+  },
+  {
+    "id": 1749913934059,
+    "details": {
+      "Pseudo": "Jsp",
+      "Age": 24,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Jujutsu Kaisen",
+        "Nom": "Kento Nanami"
+      }
+    }
+  },
+  {
+    "id": 1749914092567,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Demon Slayer",
+        "Nom": "Kokushibo"
+      }
+    }
+  },
+  {
+    "id": 1749914433661,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "HunterXHunter",
+        "Nom": "Gon"
+      }
+    }
+  },
+  {
+    "id": 1749914732162,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Blue Lock",
+        "Nom": "Yoichi Isagi"
+      }
+    }
+  },
+  {
+    "id": 1749914733463,
+    "details": {
+      "Pseudo": "44",
+      "Age": 25,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "One Piece",
+        "Nom": "Robin"
+      }
+    }
+  },
+  {
+    "id": 1749915550655,
+    "details": {
+      "Pseudo": "'",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Dragon Ball Z",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749915638259,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749915666560,
+    "details": {
+      "Pseudo": "YATO",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Dragon Ball Z",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749915750877,
+    "details": {
+      "Pseudo": "YATO",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Darling in the Franxx",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1749915883560,
+    "details": {
+      "Pseudo": "Max",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1749915888995,
+    "details": {
+      "Pseudo": "YATO",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Son Goku"
+      }
+    }
+  },
+  {
+    "id": 1749915971658,
+    "details": {
+      "Pseudo": "'",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Son Gohan"
+      }
+    }
+  },
+  {
+    "id": 1749916029457,
+    "details": {
+      "Pseudo": "Hercule",
+      "Age": 20,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1749916703029,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Kenpachi"
+      }
+    }
+  },
+  {
+    "id": 1749916923958,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Naruto Shippuden",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749917188066,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "HunterXHunter",
+        "Nom": "Hisoka"
+      }
+    }
+  },
+  {
+    "id": 1749917300660,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Nanatsu No Taizai",
+        "Nom": "Meliodas"
+      }
+    }
+  },
+  {
+    "id": 1749917663261,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "One Piece",
+        "Nom": "Aokiji"
+      }
+    }
+  },
+  {
+    "id": 1749917739024,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "SNK",
+        "Nom": "Livaï"
+      }
+    }
+  },
+  {
+    "id": 1749917841481,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Blue Lock",
+        "Nom": "Seishiro Nagi"
+      }
+    }
+  },
+  {
+    "id": 1749917931100,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Tokyo Ghoul",
+        "Nom": "Arima Kishô"
+      }
+    }
+  },
+  {
+    "id": 1749918073857,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Dragon Ball Z",
+        "Nom": "Boo"
+      }
+    }
+  },
+  {
+    "id": 1749918286057,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Bleach",
+        "Nom": "Kenpachi"
+      }
+    }
+  },
+  {
+    "id": 1749918469985,
+    "details": {
+      "Pseudo": "Romane",
+      "Age": 18,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "Fairy Tail",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749918486498,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Demon Slayer",
+        "Nom": "Akaza"
+      }
+    }
+  },
+  {
+    "id": 1749918586461,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Naruto Shippuden",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1749918613868,
+    "details": {
+      "Pseudo": "krak3n",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Snk",
+        "Cat": "Seinen"
+      }
+    }
+  },
+  {
+    "id": 1749918650312,
+    "details": {
+      "Pseudo": "Romane",
+      "Age": 18,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "Fairy Tail",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749918883355,
+    "details": {
+      "Pseudo": "Romane",
+      "Age": 18,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Erza Scarlet"
+      }
+    }
+  },
+  {
+    "id": 1749921039778,
+    "details": {
+      "Pseudo": "Doom",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Gintama",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749929962381,
+    "details": {
+      "Pseudo": "tanguy",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Fairy Tail",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749930191855,
+    "details": {
+      "Pseudo": "Undoutemabite",
+      "Age": 16,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "HunterXHunter",
+        "Nom": "Knuckle"
+      }
+    }
+  },
+  {
+    "id": 1749930457606,
+    "details": {
+      "Pseudo": "Undoutemabite",
+      "Age": 16,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749988366802,
+    "details": {
+      "Pseudo": "alex",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1749988448066,
+    "details": {
+      "Pseudo": "alex",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1750003359106,
+    "details": {
+      "Pseudo": "Hirokuro_sama",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Tokyo Ghoul",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750004812070,
+    "details": {
+      "Pseudo": "E",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Demon Slayer",
+        "Nom": "Tanjiro"
+      }
+    }
+  },
+  {
+    "id": 1750059258117,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Blue Lock",
+        "Nom": "Yoichi Isagi"
+      }
+    }
+  },
+  {
+    "id": 1750067015725,
+    "details": {
+      "Pseudo": "toto",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Solo Leveling",
+        "Cat": "Manhwa"
+      }
+    }
+  },
+  {
+    "id": 1750072122641,
+    "details": {
+      "Pseudo": "Issaman",
+      "Age": 20,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Dragon Ball Z",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750074694429,
+    "details": {
+      "Pseudo": "DarkWhito",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "One-Punch Man",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750074887639,
+    "details": {
+      "Pseudo": "DarkWhito",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Zoro"
+      }
+    }
+  },
+  {
+    "id": 1750080023043,
+    "details": {
+      "Pseudo": "Gaga",
+      "Age": 30,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Doflamingo"
+      }
+    }
+  },
+  {
+    "id": 1750080713834,
+    "details": {
+      "Pseudo": "Gaga",
+      "Age": 30,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "JoJo's Bizarre Adventure",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750081214019,
+    "details": {
+      "Pseudo": "Gaga",
+      "Age": 30,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "One-Punch Man",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750082386728,
+    "details": {
+      "Pseudo": "Léane",
+      "Age": 17,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "One Piece",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750082665699,
+    "details": {
+      "Pseudo": "Léane",
+      "Age": 17,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "Nana",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1750083037973,
+    "details": {
+      "Pseudo": "Léane",
+      "Age": 17,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "20th Century Boys",
+        "Cat": "Seinen"
+      }
+    }
+  },
+  {
+    "id": 1750083079954,
+    "details": {
+      "Pseudo": "Léane",
+      "Age": 17,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "Wind Breaker",
+        "Cat": "Manhwa"
+      }
+    }
+  },
+  {
+    "id": 1750083126720,
+    "details": {
+      "Pseudo": "Léane",
+      "Age": 17,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "One Piece",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1750083242558,
+    "details": {
+      "Pseudo": "Léane",
+      "Age": 17,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750083576043,
+    "details": {
+      "Pseudo": "Léane",
+      "Age": 17,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Kisuke Urahara "
+      }
+    }
+  },
+  {
+    "id": 1750088280759,
+    "details": {
+      "Pseudo": "jsp",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "One Piece",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750088681053,
+    "details": {
+      "Pseudo": "jsp",
+      "Age": 22,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "One Piece",
+        "Nom": "Shanks"
+      }
+    }
+  },
+  {
+    "id": 1750089378350,
+    "details": {
+      "Pseudo": "mr crabs",
+      "Age": 16,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Bleach",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750094327450,
+    "details": {
+      "Pseudo": "Kuramy",
+      "Age": 34,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "GTO",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1750104776536,
+    "details": {
+      "Pseudo": "Hirokuro_sama",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "Tokyo Ghoul",
+        "Nom": "Arima Kishô"
+      }
+    }
+  },
+  {
+    "id": 1750104912033,
+    "details": {
+      "Pseudo": "Hirokuro_sama",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Arima Kishô"
+      }
+    }
+  },
+  {
+    "id": 1750144609025,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Kaguya-sama:Love is War",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1750167167093,
+    "details": {
+      "Pseudo": "Jerky",
+      "Age": 39,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "One Piece",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1750168121709,
+    "details": {
+      "Pseudo": "Jerky",
+      "Age": 39,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "JoJo's Bizarre Adventure",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750168695539,
+    "details": {
+      "Pseudo": "Yzolt",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "One Piece",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750168960182,
+    "details": {
+      "Pseudo": "Yzolt",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Luffy"
+      }
+    }
+  },
+  {
+    "id": 1750177415159,
+    "details": {
+      "Pseudo": "Louuuuuuuu",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Beastars",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750177417038,
+    "details": {
+      "Pseudo": "Louuuuuuuu",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Beastars",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750177693369,
+    "details": {
+      "Pseudo": "Louuuuuuuu",
+      "Age": 19,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Kiyotaka Ayanokōji"
+      }
+    }
+  },
+  {
+    "id": 1750178167356,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "JoJo's Bizarre Adventure",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750178821559,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "JoJo's Bizarre Adventure",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750178821590,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "JoJo's Bizarre Adventure",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750178821671,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "JoJo's Bizarre Adventure",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750179195958,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "Demon Slayer",
+        "Nom": "Akaza"
+      }
+    }
+  },
+  {
+    "id": 1750179788136,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "Jujutsu Kaisen",
+        "Nom": "Suguru Geto"
+      }
+    }
+  },
+  {
+    "id": 1750180048768,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "Blue Lock",
+        "Nom": "Ryusei Shido"
+      }
+    }
+  },
+  {
+    "id": 1750180781809,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "HunterXHunter",
+        "Nom": "Hisoka"
+      }
+    }
+  },
+  {
+    "id": 1750181206964,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "Dragon Ball Z",
+        "Nom": "Freezer"
+      }
+    }
+  },
+  {
+    "id": 1750181649068,
+    "details": {
+      "Pseudo": "Akeboshi",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "Naruto Shippuden",
+        "Nom": "Tobi"
+      }
+    }
+  },
+  {
+    "id": 1750235162370,
+    "details": {
+      "Pseudo": "charlotte",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750235195962,
+    "details": {
+      "Pseudo": "charlotte",
+      "Age": 19,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "Hunter x Hunter",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1750235425073,
+    "details": {
+      "Pseudo": "Maxime",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Dragon Ball Z",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750235460533,
+    "details": {
+      "Pseudo": "Maxime",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Dragon Ball Z",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1750235520857,
+    "details": {
+      "Pseudo": "Maxime",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "SNK",
+        "Nom": "Eren Jäger"
+      }
+    }
+  },
+  {
+    "id": 1750235587166,
+    "details": {
+      "Pseudo": "Maxime",
+      "Age": 21,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Zoro"
+      }
+    }
+  },
+  {
+    "id": 1750248466925,
+    "details": {
+      "Pseudo": "Kiba",
+      "Age": 32,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "The Gamer",
+        "Cat": "Manhwa"
+      }
+    }
+  },
+  {
+    "id": 1750248724300,
+    "details": {
+      "Pseudo": "Kiba",
+      "Age": 32,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "GTO",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750248794261,
+    "details": {
+      "Pseudo": "Kiba",
+      "Age": 32,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "GTO",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1750248919760,
+    "details": {
+      "Pseudo": "Kiba",
+      "Age": 32,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "Fruit Basket",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1750248954868,
+    "details": {
+      "Pseudo": "Kiba",
+      "Age": 32,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "Snk",
+        "Cat": "Seinen"
+      }
+    }
+  },
+  {
+    "id": 1750249057696,
+    "details": {
+      "Pseudo": "Kiba",
+      "Age": 32,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "SNK",
+        "Nom": "Mikasa Ackerman"
+      }
+    }
+  },
+  {
+    "id": 1750249120062,
+    "details": {
+      "Pseudo": "Kiba",
+      "Age": 32,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "GTO",
+        "Cat": "Shōnen"
+      }
+    }
+  },
+  {
+    "id": 1750249166569,
+    "details": {
+      "Pseudo": "Kiba",
+      "Age": 32,
+      "Sexe": "Femme",
+      "Manga": {
+        "Titre": "Fruit Basket",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1750250899002,
+    "details": {
+      "Pseudo": "SebastianxoxoDamon",
+      "Age": 36,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "Fruit Basket",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750251176206,
+    "details": {
+      "Pseudo": "SebastianxoxoDamon",
+      "Age": 36,
+      "Sexe": "Femme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Kyubi"
+      }
+    }
+  },
+  {
+    "id": 1750251432948,
+    "details": {
+      "Pseudo": "SebastianxoxoDamon",
+      "Age": 36,
+      "Sexe": "Femme",
+      "Anime": {
+        "Titre": "Fruit Basket",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1750252196958,
+    "details": {
+      "Pseudo": "Brimel",
+      "Age": 27,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Radiant",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750252654535,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Kaguya-sama:Love is War",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1750252660791,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Kaguya-sama:Love is War",
+        "Cat": "Shōjo"
+      }
+    }
+  },
+  {
+    "id": 1750261322779,
+    "details": {
+      "Pseudo": "Calvinjojo",
+      "Age": 44,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Demon Slayer",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750261383287,
+    "details": {
+      "Pseudo": "Romyume",
+      "Age": 28,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Kingdom",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750261747957,
+    "details": {
+      "Pseudo": "Romyume",
+      "Age": 28,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Meruem"
+      }
+    }
+  },
+  {
+    "id": 1750263535384,
+    "details": {
+      "Pseudo": "Calvinjojo",
+      "Age": 44,
+      "Sexe": "Homme",
+      "Personnage": {
+        "Cat": "All-Time",
+        "Nom": "Erza Scarlet"
+      }
+    }
+  },
+  {
+    "id": 1750326772538,
+    "details": {
+      "Pseudo": "popol",
+      "Age": 36,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Death Note",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1750588165747,
+    "details": {
+      "Pseudo": "Elie",
+      "Age": 18,
+      "Sexe": "Homme",
+      "Anime": {
+        "Titre": "Devilman",
+        "Cat": "All-Time"
+      }
+    }
+  },
+  {
+    "id": 1751239327033,
+    "details": {
+      "Pseudo": "licornio",
+      "Age": 25,
+      "Sexe": "Homme",
+      "Manga": {
+        "Titre": "Baki",
+        "Cat": "All-Time"
+      }
+    }
+  }
+]
