@@ -3,7 +3,7 @@ let sexChartInstance = null;
 // Charger les données depuis l'API
 async function chargerVotes() {
   try {
-    const response = await fetch('/api/data');
+    const response = await fetch('RESULTATS.json');
     if (!response.ok) {
       throw new Error(`Erreur HTTP ${response.status} : impossible de charger les résultats.`);
     }
